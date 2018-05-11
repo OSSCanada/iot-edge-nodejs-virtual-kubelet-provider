@@ -1,0 +1,13 @@
+edgeproviderimage:
+  repository: osscanada/iot-edge-vk-node-provider
+  tag: latest
+  pullPolicy: Always
+  port: 3000
+  secretsStoreName: iot-hub
+  secretKey: iot-hub-connection-string
+vkimage:
+  repository: microsoft/virtual-kubelet
+  tag: latest
+  pullPolicy: Always
+env:
+  iotHubName: iot-hub-<account-name>
