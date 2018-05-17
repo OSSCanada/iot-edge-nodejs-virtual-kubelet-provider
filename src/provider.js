@@ -1,7 +1,8 @@
 const restify = require('restify');
 const server = restify.createServer();
 const port = process.env['PROVIDER_SERVER_PORT'] || 3000;
-const HUB_CONNECTION_STRING = process.env['HUB_CONNECTION_STRING'];
+
+server.use(restify.plugins.queryParser());
 
 // Routes && Handlers
 server.post('/createPod', require('./handlers/createPods.js'));
