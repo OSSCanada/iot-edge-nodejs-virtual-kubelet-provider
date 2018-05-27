@@ -3,8 +3,13 @@ const server = restify.createServer();
 const port = process.env['PROVIDER_SERVER_PORT'] || 3000;
 
 server.use(restify.plugins.queryParser());
+server.use(restify.plugins.bodyParser());
 
 // Routes && Handlers
+server.get('/', function(req, res, next){
+  console.log('liveness/readiness ok');
+  res.send();
+});
 server.post('/createPod', require('./handlers/createPods.js'));
 server.get('/getPods', require('./handlers/getPods'));
 server.get('/getPod', require('./handlers/getPod'));

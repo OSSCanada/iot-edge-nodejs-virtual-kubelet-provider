@@ -1,6 +1,6 @@
-FROM node:8.11.1-alpine
+FROM node:9.11.1-alpine
 
-WORKDIR /iotedgenodejsprovider
+WORKDIR /app
 COPY . .
 
 RUN ["npm", "install"]
